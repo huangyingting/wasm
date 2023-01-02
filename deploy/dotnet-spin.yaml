@@ -15,7 +15,7 @@ spec:
       runtimeClassName: wasmtime-spin-v1
       containers:
         - name: dotnet-spin
-          image: ghcr.io/huangyingting/dotnet-spin:latest
+          image: ghcr.io/huangyingting/dotnet-spin:main
           imagePullPolicy: Always
           command: ["/"]
 ---
