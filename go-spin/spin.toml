@@ -1,0 +1,15 @@
+spin_version = "1"
+authors = ["huangyingting <huangyingting@outlook.com>"]
+description = "Go WASM application"
+name = "go-spin"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "go-spin"
+source = "main.wasm"
+environment = { VERSION = "v0.1.0" }
+[component.trigger]
+route = "/..."
+[component.build]
+command = "tinygo build -wasm-abi=generic -target=wasi -gc=leaking -no-debug -o main.wasm main.go"

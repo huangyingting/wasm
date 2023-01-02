@@ -1,0 +1,15 @@
+spin_version = "1"
+authors = ["huangyingting <huangyingting@outlook.com>"]
+description = "DotNet WASM application"
+name = "dotnet-spin"
+version = "0.1.0"
+trigger = { type = "http", base = "/" }
+
+[[component]]
+id = "dotnet-spin"
+source = "bin/Release/net7.0/DotnetSpin.wasm"
+environment = { VERSION = "v0.1.0" }
+[component.build]
+command = "dotnet build -c Release"
+[component.trigger]
+route = "/..."

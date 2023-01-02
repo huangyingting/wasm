@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-spin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnet-spin
+  template:
+    metadata:
+      labels:
+        app: dotnet-spin
+    spec:
+      runtimeClassName: wasmtime-spin-v1
+      containers:
+        - name: dotnet-spin
+          image: ghcr.io/huangyingting/dotnet-spin:latest
+          imagePullPolicy: Always
+          command: ["/"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnet-spin
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: dotnet-spin

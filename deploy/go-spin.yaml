@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-spin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-spin
+  template:
+    metadata:
+      labels:
+        app: go-spin
+    spec:
+      runtimeClassName: wasmtime-spin-v1
+      containers:
+        - name: go-spin
+          image: ghcr.io/huangyingting/go-spin:latest
+          imagePullPolicy: Always
+          command: ["/"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-spin
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: go-spin
