@@ -58,7 +58,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           containerfiles: |
-            ./rust-wasmedge/Containerfile          
+            ./rust-wasmedge/Containerfile
           context: ${{ matrix.context }}
           build-args: |            
             --annotation="module.wasm.image/variant=compat-smart"
