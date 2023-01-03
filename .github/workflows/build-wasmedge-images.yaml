@@ -8,11 +8,13 @@ on:
       - 'v*'      
     paths:
       - 'rust-wasmedge/**'
+      - '.github/workflows/build-wasmedge-images.yml'
   pull_request:
     branches:
       - 'main'
     paths:
       - 'rust-wasmedge/**'
+      - '.github/workflows/build-wasmedge-images.yml'
 
 env:
   REGISTRY: ghcr.io
@@ -56,8 +58,6 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           context: ${{ matrix.context }}
-          containerfiles: |
-            ./Dockerfile
           build-args: |            
             --annotation="module.wasm.image/variant=compat-smart"
 
