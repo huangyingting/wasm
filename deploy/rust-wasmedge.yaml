@@ -17,7 +17,7 @@ spec:
       runtimeClassName: wasmedge-crun-v2
       containers:
         - name: rust-wasmedge
-          image: huangyingting/rust-wasmedge:latest
+          image: ghcr.io/huangyingting/rust-wasmedge:main
           imagePullPolicy: Always
 ---
 apiVersion: v1
