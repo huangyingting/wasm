@@ -8,13 +8,13 @@ on:
       - 'v*'      
     paths:
       - 'rust-wasmedge/**'
-      - '.github/workflows/build-wasmedge-images.yml'
+      - '.github/workflows/build-wasmedge-images.yaml'
   pull_request:
     branches:
       - 'main'
     paths:
       - 'rust-wasmedge/**'
-      - '.github/workflows/build-wasmedge-images.yml'
+      - '.github/workflows/build-wasmedge-images.yaml'
 
 env:
   REGISTRY: ghcr.io
