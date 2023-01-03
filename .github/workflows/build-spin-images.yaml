@@ -1,4 +1,4 @@
-name: "Build dotnet-spin and go-spin images"
+name: "Build spin images"
 
 on:
   push:
@@ -22,7 +22,7 @@ env:
 
 jobs:
   build-and-push-image:
-    name: Build dotnet-spin and go-spin images
+    name: Build spin images
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
