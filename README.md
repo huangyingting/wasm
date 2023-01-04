@@ -1,5 +1,10 @@
 # Run WASM applications from Kubernetes
 
+## Inspect .wasm import section
+```shell
+wasm-objdump --section 'import' --details  path/to/file.wasm
+```
+
 ## WasmEdge Kubernetes
 The crun project has WasmEdge support baked in. 
 
