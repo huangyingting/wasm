@@ -12,7 +12,7 @@ spec:
       labels:
         app: rust-wasmedge
       annotations:
-        module.wasm.image/variant: compat-smart        
+        module.wasm.image/variant: compat-smart
     spec:
       runtimeClassName: wasmedge-crun-v2
       containers:
