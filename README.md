@@ -216,3 +216,13 @@ rustup target add wasm32-wasi
 cargo build --release --target wasm32-wasi
 wasmedge target/wasm32-wasi/release/rust-wasmedge.wasm
 ```
+rust-wasmedge also support dapr, to add dapr sidecar, add below annotations to deploy/rust-wasmedge.yaml
+```yaml
+...
+      annotations:
+        module.wasm.image/variant: compat-smart
+        # Dapr support
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "rust-wasmedge"
+        dapr.io/app-port: "80"
+```
