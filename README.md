@@ -128,6 +128,11 @@ vi /etc/containerd/config.toml
           runtime_type = "io.containerd.slight.v1"
 ```
 
+```bash
+systemctl restart containerd
+systemctl status containerd
+```
+
 Add `RuntimeClass` to support spin & slight from Kubernetes cluster
 ```yaml
 # runtimeclass.yaml
