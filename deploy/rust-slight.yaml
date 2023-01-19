@@ -15,7 +15,7 @@ spec:
       runtimeClassName: wasmtime-slight-v1
       containers:
         - name: rust-slight
-          image: huangyingting/rust-slight:latest
+          image: ghcr.io/huangyingting/rust-slight:main
           imagePullPolicy: Always
           command: ["/"]
 ---
