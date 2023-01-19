@@ -1,0 +1,11 @@
+specversion = "0.2"
+
+[[capability]]
+resource = "http"
+name = "rust-slight"
+
+[[capability]]
+resource = "kv.redis"
+name = "rust-slight"
+    [capability.configs]
+    REDIS_ADDRESS = "redis://:P@ssw0rd@redis-master.redis:6379"    

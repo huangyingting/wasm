@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rust-slight
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rust-slight
+  template:
+    metadata:
+      labels:
+        app: rust-slight
+    spec:
+      runtimeClassName: wasmtime-slight-v1
+      containers:
+        - name: rust-slight
+          image: huangyingting/rust-slight:latest
+          imagePullPolicy: Always
+          command: ["/"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rust-slight
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  selector:
+    app: rust-slight
