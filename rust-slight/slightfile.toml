@@ -7,3 +7,5 @@ name = "rust-slight"
 [[capability]]
 resource = "kv.redis"
 name = "rust-slight"
+    [capability.configs]
+    REDIS_ADDRESS = "${envvars.REDIS_ADDRESS}"
