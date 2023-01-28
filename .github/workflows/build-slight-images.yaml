@@ -8,11 +8,13 @@ on:
       - 'v*'      
     paths:
       - 'rust-slight/**'
+      - '.github/workflows/build-slight-images.yaml'
   pull_request:
     branches:
       - 'main'
     paths:
       - 'rust-slight/**'
+      - '.github/workflows/build-slight-images.yaml'
 
 env:
   REGISTRY: ghcr.io
