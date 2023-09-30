@@ -12,7 +12,7 @@ spec:
       labels:
         app: go-spin
     spec:
-      runtimeClassName: wasmtime-spin-v1
+      runtimeClassName: wasmtime-spin
       containers:
         - name: go-spin
           image: ghcr.io/huangyingting/go-spin:main
