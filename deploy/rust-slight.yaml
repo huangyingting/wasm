@@ -12,7 +12,7 @@ spec:
       labels:
         app: rust-slight
     spec:
-      runtimeClassName: wasmtime-slight-v1
+      runtimeClassName: wasmtime-slight
       containers:
         - name: rust-slight
           image: ghcr.io/huangyingting/rust-slight:main
