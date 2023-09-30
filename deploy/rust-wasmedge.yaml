@@ -14,7 +14,7 @@ spec:
       annotations:
         module.wasm.image/variant: compat-smart
     spec:
-      runtimeClassName: wasmedge-crun-v2
+      runtimeClassName: wasmedge-crun
       containers:
         - name: rust-wasmedge
           image: ghcr.io/huangyingting/rust-wasmedge:main
